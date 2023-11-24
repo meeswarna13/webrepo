@@ -1,0 +1,104 @@
+<html>
+<head>
+</head>
+ <style>
+        #countryCode {
+            width: 80px;
+        }
+label{
+width=100px;
+display:inline-block;
+}
+    </style>
+</head>
+<body>
+<div id="form">
+<form>
+<br>
+<h1><center>MITS REGISTRATION FORM</center></h1>
+<label>User Name:</label>
+<input type="text" name="name"/>
+<br>
+<label>Password:</label>
+<input type="password" name="name"/>
+<br>
+<label>First Name:</label>
+<input type="text" name="name"/>
+<br>
+<label>Last Name:</label>
+<input type="text" name="name"/>
+<br>
+<label>Email:</label>
+<input type=""text" name="email"/>
+<br>
+<label>Gender:</label>:<br>
+<input type="radio" name="Gender" value="on">Male
+<br>
+<input type="radio" name="Gender" value="on">Female<br>
+  
+<br>
+<label>Date OF Birth:</label>
+<input type="number" name="dateofbirth"/>
+<br>
+<body>
+    <label for="countryCode">Country Code:</label>
+    <select id="countryCode" name="countryCode">
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+91">+91 (India)</option>
+        <!-- Add more options as needed -->
+    </select>
+    
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber"><br>
+    
+</body>
+<label>Address:</label>
+<br> <textarea rows="5" cols="20" name=Address"> 
+</textarea><br>
+<label>Father's Name:</label>
+<input type="text" name="name"/>
+<br>
+<label>Mother's Name:</label>
+<input type="text" name="name"/>
+<br>
+<label>University:</label>
+<input type="text" name="name"/>
+<br>
+<label>CGPA:</label>
+<input type="number" name="marks"/>
+<br>
+<label>Branch:</label>
+<br>
+<input type="radio" name="Branch" value="on">BCA
+<br>
+<input type="radio"  name="Branch" value="on">B.Tech CS
+<br>
+<input type="radio"  name="Branch" value="on">B.TEch AI
+<br>
+<input type="radio"  name="Branch" value="on">B.Tech Mech
+<br>
+<label>BackLogs:</label>
+<br>
+<input type="radio" name="Backlogs" value="on">YES
+<br>
+<input type="radio" name="Backlogs" value="on">NO
+<br>
+<label>Extra-Curricular Activities:</label>
+<br>
+<input type="checkbox" name="Extra-Curricular Activities" value="on">Arts
+<br>
+<input type="checkbox" name="Extra-Curricular Activities" value="on">Sports
+<br>
+<input type="checkbox" name="Extra-Curricular Activities" value="on">Eco club
+<br>
+<a href="#top">top</a>
+
+</form>
+</div>
+</body>
+</html>
+
+
+
+

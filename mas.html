@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>JS String and Math Functions</title>
+</head>
+<body>
+    <h1>JS String and Math Functions</h1>
+
+    <h2>String Functions</h2>
+    <label for="inputString">Enter a String: </label>
+    <input type="text" id="inputString">
+    <button onclick="stringFunctions()">Submit</button>
+    <p id="stringOutput"></p>
+
+    <h2>Math Functions</h2>
+    <label for="inputNumber">Enter a Number: </label>
+    <input type="number" id="inputNumber">
+    <button onclick="mathFunctions()">Submit</button>
+    <p id="mathOutput"></p>
+
+    <script>
+        function stringFunctions() {
+            var inputString = document.getElementById("inputString").value;
+            var stringOutput = document.getElementById("stringOutput");
+
+           
+            var stringLength = inputString.length;
+
+       
+            var upperCaseString = inputString.toUpperCase();
+
+           
+            var lowerCaseString = inputString.toLowerCase();
+
+            stringOutput.innerHTML = "Length of the string: " + stringLength + "<br>";
+            stringOutput.innerHTML += "Uppercase: " + upperCaseString + "<br>";
+            stringOutput.innerHTML += "Lowercase: " + lowerCaseString;
+        }
+
+        function mathFunctions() {
+            var inputNumber = parseFloat(document.getElementById("inputNumber").value);
+            var mathOutput = document.getElementById("mathOutput");
+
+           
+            var squareRoot = Math.sqrt(inputNumber);
+
+           
+            var roundedNumber = Math.round(inputNumber);
+
+         
+            var randomValue = Math.random();
+
+            mathOutput.innerHTML = "Square Root: " + squareRoot + "<br>";
+            mathOutput.innerHTML += "Rounded Number: " + roundedNumber + "<br>";
+            mathOutput.innerHTML += "Random Value: " + randomValue;
+        }
+    </script>
+</body>
+</html>
+

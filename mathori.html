@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+<body>
+
+    <h2>Math Functions</h2>
+    <label for="inputNumber">Enter a Number: </label>
+    <input type="number" id="inputNumber">
+    <button onclick="mathFunctions()">Submit</button>
+    <p id="mathOutput"></p>
+<script>
+        function mathFunctions() {
+            var inputNumber = parseFloat(document.getElementById("inputNumber").value);
+            var mathOutput = document.getElementById("mathOutput");
+
+           
+            var squareRoot = Math.sqrt(inputNumber);
+
+           
+            var roundedNumber = Math.round(inputNumber);
+
+         
+            var randomValue = Math.random();
+           
+
+            mathOutput.innerHTML = "Square Root: " + squareRoot + "<br>";
+            mathOutput.innerHTML += "Rounded Number: " + roundedNumber + "<br>";
+            mathOutput.innerHTML += "Random Value: " + randomValue;
+          
+        }
+        
+    </script>
+</body>
+</html>

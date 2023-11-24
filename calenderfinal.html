@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar </title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    margin: 20px auto;
+    
+    
+}
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    td {
+        color: red;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    td:hover {
+      background-color: blackS;
+    }
+
+
+.input{
+    width: 50%;
+    text-align: center;
+    padding-left: 20px;
+}
+
+h1 {
+    color: #333;
+}
+label {
+    display: block;
+    margin: 10px 0;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+button {
+    background-color: rgb(99, 161, 12);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: blue;
+}
+/* .input-container{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    
+} */
+#selected-info{
+    width: 50%;
+    padding-right: 30%;
+}
+.parent{
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-around;
+}
+.child1{
+    width: 50%;
+    text-align: center;
+}
+.child2{
+    width: 50%;
+    padding-right: 100px;
+    /* margin-left: 100px; */
+}
+
+  </style>
+</head>
+<body>
+
+<div class="input-container">
+    <br><br>
+<center>
+  <div class="input">
+  <label for="year">Enter the year:</label>
+  <input type="text" id="year" >
+
+  <label for="month">Enter the month:</label>
+  <input type="text" id="month" ><br>
+  <br>
+
+  <button onclick="generateCalendar()"> Submit</button>
+  <br>
+  </div>
+  <div id="selected-info"></div>
+</center>
+</div>
+
+<script>
+  function generateCalendar() {
+    // Get user input for year and month
+    var yearInput = document.getElementById("year");
+    var monthInput = document.getElementById("month");
+
+    var year = yearInput.value.trim();
+    var month = monthInput.value.trim();
+
+    if (!isValidInteger(year) || !isValidInteger(month) || month < 1 || month > 12) {
+      alert("Invalid input. Please enter valid integers for the year and month.");
+      return;
+    }
+
+    
+    Heading = "<b>Calendar for " + getMonthName(month) + " " + year+"</b>";
+
+    
+    var firstDay = new Date(year, month - 1, 1);
+
+   
+    var table = "<table><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
+
+   
+    for (var i = 0; i < 6; i++) {
+      table += "<tr>";
+
+      for (var j = 0; j < 7; j++) {
+        var day = i * 7 + j - firstDay.getDay() + 1;
+
+        if (day > 0 && day <= new Date(year, month, 0).getDate()) {
+          table += "<td>" + day + "</td>";
+        } else {
+          table += "<td></td>";
+        }
+      }
+
+      table += "</tr>";
+    }
+
+    table += "</table>";
+
+   
+    document.body.innerHTML = "<div class='parent'><div class='child1'>"+document.querySelector(".input-container").outerHTML+"</div>" + "<div class='child2'><center>"+Heading+"<br><br>"+table+"</center></div></div>";
+  }
+
+  function isValidInteger(value) {
+    return /^[0-9]+$/.test(value);
+  }
+
+  function getMonthName(month) {
+    var monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    return monthNames[month - 1];
+  }
+</script>
+
+</body>
+</html>

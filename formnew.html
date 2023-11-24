@@ -1,0 +1,38 @@
+document.getElementById('studentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Getting form values
+    var name = document.getElementById('name').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var dob = document.getElementById('dob').value.trim();
+
+    // Regular expressions for validation
+    var nameRegex = /^[a-zA-Z\s]+$/;
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Date validation might require more complex logic depending on your requirements
+
+    // Validation
+    if (!name.match(nameRegex)) {
+        alert('Please enter a valid name.');
+        return false;
+    }
+
+    if (!password.match(passwordRegex)) {
+        alert('Password must contain at least one lowercase letter, one uppercase letter, one digit, and be 6-20 characters long.');
+        return false;
+    }
+
+    if (!email.match(emailRegex)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+
+    // Additional validation for Date of Birth (DOB) can be added here based on specific requirements
+
+    // If all validations pass, you can submit the form or perform additional actions here
+    alert('Form submitted successfully!');
+    // document.getElementById('studentForm').submit(); // Uncomment to submit the form
+});
+

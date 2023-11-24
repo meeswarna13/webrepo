@@ -1,0 +1,64 @@
+<html>
+<head>
+</head>
+<body>
+
+    <h2>Math Functions</h2>
+    <label for="inputNumber">Enter a Number: </label>
+    <input type="number" id="inputNumber">
+    
+    <button onclick="mathFunctions()">Submit</button>
+    <p id="mathOutput"></p>
+
+    <script>
+        function mathFunctions() {
+            var inputNumber = parseFloat(document.getElementById("inputNumber").value);
+            var mathOutput = document.getElementById("mathOutput");
+
+            // Math functions
+            var squareRoot = Math.sqrt(inputNumber);
+            var roundedNumber = Math.round(inputNumber);
+            var randomValue = Math.random();
+
+            var eValue = Math.E;
+            var piValue = Math.PI;
+            var sqrt2Value = Math.SQRT2;
+            var sqrt1_2Value = Math.SQRT1_2;
+            var ln2Value = Math.LN2;
+            var ln10Value = Math.LN10;
+            var log2eValue = Math.LOG2E;
+
+            var ceilValue = Math.ceil(inputNumber);
+            var floorValue = Math.floor(inputNumber);
+            var truncValue = Math.trunc(inputNumber);
+            var signValue = Math.sign(inputNumber);
+            var powValue = Math.pow(inputNumber, 2); // Example: square of the input
+            var absValue = Math.abs(inputNumber);
+            var minValue = Math.min(inputNumber, 5); // Example: comparing with 5
+            var maxValue = Math.max(inputNumber, 10); // Example: comparing with 10
+            var logValue = Math.log(inputNumber);
+
+            // Display the results
+            mathOutput.innerHTML = "Square Root: " + squareRoot + "<br>";
+            mathOutput.innerHTML += "Rounded Number: " + roundedNumber + "<br>";
+            mathOutput.innerHTML += "Random Value: " + randomValue + "<br>";
+            mathOutput.innerHTML += "Math.E: " + eValue + "<br>";
+            mathOutput.innerHTML += "Math.PI: " + piValue + "<br>";
+            mathOutput.innerHTML += "Math.SQRT2: " + sqrt2Value + "<br>";
+            mathOutput.innerHTML += "Math.SQRT1_2: " + sqrt1_2Value + "<br>";
+            mathOutput.innerHTML += "Math.LN2: " + ln2Value + "<br>";
+            mathOutput.innerHTML += "Math.LN10: " + ln10Value + "<br>";
+            mathOutput.innerHTML += "Math.LOG2E: " + log2eValue + "<br>";
+            mathOutput.innerHTML += "Math.ceil: " + ceilValue + "<br>";
+            mathOutput.innerHTML += "Math.floor: " + floorValue + "<br>";
+            mathOutput.innerHTML += "Math.trunc: " + truncValue + "<br>";
+            mathOutput.innerHTML += "Math.sign: " + signValue + "<br>";
+            mathOutput.innerHTML += "Math.pow: " + powValue + "<br>";
+            mathOutput.innerHTML += "Math.abs: " + absValue + "<br>";
+            mathOutput.innerHTML += "Math.min (with 5): " + minValue + "<br>";
+            mathOutput.innerHTML += "Math.max (with 10): " + maxValue + "<br>";
+            mathOutput.innerHTML += "Math.log: " + logValue;
+        }
+    </script>
+</body>
+</html>

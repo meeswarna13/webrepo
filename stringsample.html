@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    
+</head>
+<body>
+
+    <h1>String Functions </h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString" >
+
+    <button onclick="applyStringFunctions()">Submit</button>
+
+    <div id="output">
+        
+    </div>
+
+    <script>
+        function applyStringFunctions() {
+            let inputString = document.getElementById("inputString").value;
+
+            let outputHtml = "<h2>Results:</h2>";
+
+         
+            outputHtml += "<p><strong>Original String:</strong> " + inputString + "</p>";
+            outputHtml += "<p><strong>Length:</strong> " + inputString.length + "</p>";
+            outputHtml += "<p><strong>Uppercase:</strong> " + inputString.toUpperCase() + "</p>";
+            outputHtml += "<p><strong>Lowercase:</strong> " + inputString.toLowerCase() + "</p>";
+            outputHtml += "<p><strong>First Character:</strong> " + inputString.charAt(0) + "</p>";
+            outputHtml += "<p><strong>Last Character:</strong> " + inputString.charAt(inputString.length - 1) + "</p>";
+            outputHtml += "<p><strong>Substring (2 to 5):</strong> " + inputString.substring(2, 5) + "</p>";
+            outputHtml += "<p><strong>Slice (2 to 5):</strong> " + inputString.slice(2, 5) + "</p>";
+            outputHtml += "<p><strong>Substr (2, 5):</strong> " + inputString.substr(2, 5) + "</p>";
+            outputHtml += "<p><strong>Replace 'JavaScript' with 'GPT-3.5':</strong> " + inputString.replace('JavaScript', 'GPT-3.5') + "</p>";
+            outputHtml += "<p><strong>Concatenation:</strong> " + inputString.concat(" I love", " programming.") + "</p>";
+
+            document.getElementById("output").innerHTML = outputHtml;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Form Validation</title>
+<body>
+<h1><center>Student Application Form</center></h1>
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var dob = document.getElementById('dob').value;
+
+
+      if (name.trim() === '' || email.trim() === '' || password.trim() === '' || dob.trim() === '') {
+        alert('Please fill in all fields');
+        return false;
+      }
+
+      // Check email format
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+      }
+
+      // Check password length
+      if (password.length < 6) {
+        alert('Password should be at least 6 characters long');
+        return false;
+      }
+
+      // If all validations pass
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+  
+   <label>Gender:</label>:<br>
+  <input type="radio" name="Gender" value="on">Male
+  <input type="radio" name="Gender" value="on">Female<br>
+  <br>
+  <br>
+<body>
+    <label for="countryCode">Country Code:</label>
+    <select id="countryCode" name="countryCode">
+        <option value="+1">+1 (USA)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+91">+91 (India)</option>
+        <!-- Add more options as needed -->
+    </select>
+<br>
+<br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+

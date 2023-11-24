@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MITS MCA Registration Form</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color:white;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <h2><center>MITS MCA REGISTRATION FORM</center></h2>
+
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+   
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="qualification">Qualification:</label>
+    <input type="text" id="qualification" name="qualification" required>
+
+    <label for="yearOfAdmission">Year of Admission:</label>
+    <input type="number" id="yearOfAdmission" name="yearOfAdmission" min="2000" max="2023" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+
+    <br> <!-- Line break added here -->
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      var fullName = document.getElementById('fullName').value;
+      var email = document.getElementById('email').value;
+      var phoneNumber = document.getElementById('phoneNumber').value;
+      var gender = document.getElementById('gender').value;
+      var qualification = document.getElementById('qualification').value;
+      var yearOfAdmission = document.getElementById('yearOfAdmission').value;
+      var address = document.getElementById('address').value;
+
+      if (fullName === "" || email === "" || phoneNumber === "" || gender === "" || qualification === "" || yearOfAdmission === "" || address === "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      if (!/^\d{10}$/.test(phoneNumber)) {
+        alert("Phone number must be 10 digits without spaces or dashes");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>

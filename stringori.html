@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<h2>String Functions</h2>
+    <label for="inputString">Enter a String: </label>
+    <input type="text" id="inputString">
+    <button onclick="stringFunctions()">Submit</button>
+    <p id="stringOutput"></p>
+ <script>
+        function stringFunctions() {
+            var inputString = document.getElementById("inputString").value;
+            var stringOutput = document.getElementById("stringOutput");
+
+           
+            var stringLength = inputString.length;
+
+       
+            var upperCaseString = inputString.toUpperCase();
+
+           
+            var lowerCaseString = inputString.toLowerCase();
+
+            stringOutput.innerHTML = "Length of the string: " + stringLength + "<br>";
+            stringOutput.innerHTML += "Uppercase: " + upperCaseString + "<br>";
+            stringOutput.innerHTML += "Lowercase: " + lowerCaseString;
+        }
+
+</script>
+</body>

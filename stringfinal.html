@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STRING FUNCTIONS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: gray;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blue;
+        }
+        #output {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>String Functions</h1>
+
+    <label for="inputText">Enter a text:</label>
+    <input type="text" id="inputText" placeholder="Type your text here">
+
+    <label for="searchString">Enter a string to replace:</label>
+    <input type="text" id="searchString" placeholder="String to replace">
+
+    <label for="replacementString">Enter a replacement string:</label>
+    <input type="text" id="replacementString" placeholder="Replacement string">
+
+    <button onclick="performStringFunctions()">Submit</button>
+
+    <div id="output">
+       
+    </div>
+
+    <script>
+        function performStringFunctions() {
+            let inputText = document.getElementById("inputText").value;
+            let searchString = document.getElementById("searchString").value;
+            let replacementString = document.getElementById("replacementString").value;
+
+            
+            let length = inputText.length;
+            let uppercase = inputText.toUpperCase();
+            let lowercase = inputText.toLowerCase();
+            let firstChar = inputText.charAt(0);
+            let lastChar = inputText.charAt(inputText.length - 1);
+            let substring = inputText.substring(2, 5);
+            let slice = inputText.slice(2, 5);
+            let substr = inputText.substr(2, 5);
+            let replacedText = inputText.replace(new RegExp(searchString, 'g'), replacementString);
+            let concatenatedText = inputText.concat(" ", "and spring");
+
+            let outputHtml = "<h2>Results:</h2>";
+            outputHtml += "<p><strong>Original Text:</strong> " + inputText + "</p>";
+            outputHtml += "<p><strong>Length:</strong> " + length + "</p>";
+            outputHtml += "<p><strong>Uppercase:</strong> " + uppercase + "</p>";
+            outputHtml += "<p><strong>Lowercase:</strong> " + lowercase + "</p>";
+            outputHtml += "<p><strong>First Character:</strong> " + firstChar + "</p>";
+            outputHtml += "<p><strong>Last Character:</strong> " + lastChar + "</p>";
+            outputHtml += "<p><strong>Substring (2 to 5):</strong> " + substring + "</p>";
+            outputHtml += "<p><strong>Slice (2 to 5):</strong> " + slice + "</p>";
+            outputHtml += "<p><strong>Substr (2, 5):</strong> " + substr + "</p>";
+            outputHtml += "<p><strong>Replaced Text with '" + searchString + "':</strong> " + replacedText + "</p>";
+            outputHtml += "<p><strong>Concatenated Text:</strong> " + concatenatedText + "</p>";
+
+            document.getElementById("output").innerHTML = outputHtml;
+        }
+    </script>
+</body>
+</html>

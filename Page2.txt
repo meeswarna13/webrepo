@@ -1,0 +1,15 @@
+<html>
+<body>
+<h1>EDUCATIONAL QUALIFICATION</h1>
+<p><b>Degree<br>
+BCA(87%)
+Ettumanoorappan College<br>
+2020-2023<br></p>
+<p>Higher Secondary<br>
+Bappuji Central School(75%)<br>
+Peruva,Kottyam<br></p>
+<a href="page1.html">visit page1</a>
+</body>
+</html>
+
+

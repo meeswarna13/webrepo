@@ -1,0 +1,21 @@
+<html>
+<head>
+    <style>
+        h1 {
+          color: black;
+        }
+        </style>
+        
+</head>
+<body>
+<img src="i1.jpg" width="400" height="300"><br>
+<h1><strong>PAZHOOR TEMPLE</strong></h1>
+<br><img src="waterfall.jpg" width="400" height="400"><br>
+
+<h1><strong>AREEKKAL WATERFALLS</strong></h1>
+<img src="i2.jpg" width="500" height="400"><br>
+<h1><strong>AATTUTHEERAM PARK</strong></h1>
+<a href="piravom.html"><br>
+  prev page</a>
+</body>
+</html>
